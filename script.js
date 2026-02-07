@@ -61,13 +61,13 @@ let openedLetters = 0;
 const noTexts = ["No", "Are you sure?", "Think again 😶", "Please 🥺", "Last chance 😭", "Really?", "Final answer?"];
 
 const noPositions = [
-    { x: -180, y: -100 },
-    { x: 180, y: -100 },
-    { x: -180, y: 100 },
-    { x: 180, y: 100 },
-    { x: 0, y: -150 },
-    { x: -200, y: 0 },
-    { x: 200, y: 0 }
+    { x: -100, y: -60 },
+    { x: 100, y: -60 },
+    { x: -100, y: 60 },
+    { x: 100, y: 60 },
+    { x: 0, y: -90 },
+    { x: -120, y: 0 },
+    { x: 120, y: 0 }
 ];
 
 // ===== ELEMENTS =====
@@ -103,7 +103,7 @@ function initNameEntry() {
 
 function checkName() {
     const name = nameInput.value.trim().toLowerCase();
-    if (name === 'baby' || name === 'babe') {
+    if (name === 'baby' || name === 'babe' || name === 'engu' || name === 'billu') {
         page0.style.transition = 'opacity 1s';
         page0.style.opacity = '0';
         setTimeout(() => {
@@ -150,6 +150,7 @@ function initMusicPlayer() {
     audioPlayer.play().then(() => {
         isPlaying = true;
         albumIcon.classList.add('playing');
+        document.getElementById('musicHint').classList.add('hidden');
     }).catch(() => {
         isPlaying = false;
     });
@@ -163,6 +164,7 @@ function initMusicPlayer() {
             audioPlayer.play();
             albumIcon.classList.add('playing');
             isPlaying = true;
+            document.getElementById('musicHint').classList.add('hidden');
         }
     });
 }
@@ -239,8 +241,12 @@ function initButtons() {
         const boxCenterY = boxRect.top + boxRect.height / 2;
         const pos = noPositions[noClickCount];
         
-        let newX = boxCenterX + pos.x - noBtn.offsetWidth / 2;
-        let newY = boxCenterY + pos.y - noBtn.offsetHeight / 2;
+        const isMobile = window.innerWidth <= 768;
+        const offsetX = isMobile ? pos.x * 0.6 : pos.x;
+        const offsetY = isMobile ? pos.y * 0.6 : pos.y;
+        
+        let newX = boxCenterX + offsetX - noBtn.offsetWidth / 2;
+        let newY = boxCenterY + offsetY - noBtn.offsetHeight / 2;
         
         noBtn.style.position = 'fixed';
         noBtn.style.left = newX + 'px';

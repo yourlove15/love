@@ -134,6 +134,33 @@ body {
     animation: rotate 4s linear infinite;
 }
 
+.music-hint {
+    position: absolute;
+    top: 90px;
+    right: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.music-hint.hidden {
+    display: none;
+}
+
+.hint-arrow {
+    font-size: 2em;
+    color: #E63946;
+}
+
+.hint-text {
+    font-size: 0.9em;
+    color: #E63946;
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -871,6 +898,19 @@ body {
     .album-icon {
         width: 60px;
         height: 60px;
+    }
+
+    .music-hint {
+        top: 70px;
+        right: -5px;
+    }
+
+    .hint-arrow {
+        font-size: 1.5em;
+    }
+
+    .hint-text {
+        font-size: 0.75em;
     }
 
     .drag-instruction {
