@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Montserrat:wght@400;700&family=Allura&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Page 0: Name Entry -->
+    <div id="page0" class="page active">
+        <div class="background-slider"></div>
+        <div class="floating-container"></div>
+        
+        <!-- Music Player -->
+        <div class="music-player">
+            <img src="assets/images/listen.png" alt="Album" class="album-icon" id="albumIcon">
+        </div>
+        
+        <div class="name-box">
+            <h1>What name you call me?</h1>
+            <input type="text" id="nameInput" placeholder="Type here...">
+            <button id="nameSubmit">Submit ❤️</button>
+        </div>
+    </div>
+
+    <!-- Page 1: Proposal -->
+    <div id="page1" class="page">
+        <div class="background-slider"></div>
+        
+        <!-- Music Player -->
+        <div class="music-player">
+            <img src="assets/images/listen.png" alt="Album" class="album-icon" id="albumIcon">
+        </div>
+
+        <!-- Floating Hearts & Teddies -->
+        <div class="floating-container"></div>
+
+        <!-- Proposal Box -->
+        <div class="proposal-box">
+            <h1>Will you be my Valentine?</h1>
+            <img src="assets/stickers/main_temp.gif" alt="Sticker" class="sticker">
+            <div class="buttons">
+                <button id="yesBtn" class="yes-btn">YES ❤️</button>
+                <button id="noBtn" class="no-btn">No</button>
+            </div>
+            <h2 class="yay-text" id="yayText">Yayyyy! 🎉</h2>
+            <p class="countdown-text" id="countdownText"></p>
+        </div>
+    </div>
+
+    <!-- Page 2: Memory & Letters -->
+    <div id="page2" class="page">
+        <div class="page2-background"></div>
+        
+        <!-- Instruction -->
+        <div class="drag-instruction" id="dragInstruction">Drag the images to the boxes 💕</div>
+        
+        <!-- Drop Zones -->
+        <div class="drop-zones">
+            <div class="drop-zone" data-zone="0"></div>
+            <div class="drop-zone" data-zone="1"></div>
+            <div class="drop-zone" data-zone="2"></div>
+            <div class="drop-zone" data-zone="3"></div>
+            <div class="drop-zone" data-zone="4"></div>
+            <div class="drop-zone" data-zone="5"></div>
+        </div>
+        
+        <!-- Image Stack -->
+        <div class="image-stack-container" id="imageStack">
+            <img src="assets/memories/01.jpeg" class="stack-image draggable" data-index="0">
+            <img src="assets/memories/02.jpeg" class="stack-image draggable" data-index="1">
+            <img src="assets/memories/03.jpeg" class="stack-image draggable" data-index="2">
+            <img src="assets/memories/04.jpeg" class="stack-image draggable" data-index="3">
+            <img src="assets/memories/05.jpeg" class="stack-image draggable" data-index="4">
+            <img src="assets/memories/06.jpeg" class="stack-image draggable" data-index="5">
+        </div>
+
+        <!-- Envelope Section -->
+        <div class="envelope-section" id="envelopeSection">
+            <div class="envelope-stack">
+                <div class="envelope" id="thirdEnvelope" data-order="3">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="envelope-text">hehe one more message</div>
+                        <div class="envelope-heart">❤️</div>
+                    </div>
+                </div>
+                <div class="envelope" id="secondEnvelope" data-order="2">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="envelope-text">Another message for you baby</div>
+                        <div class="envelope-heart">❤️</div>
+                    </div>
+                </div>
+                <div class="envelope" id="mainEnvelope" data-order="1">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="envelope-text">This is few messages for you babe</div>
+                        <div class="envelope-heart">❤️</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Letter Modal -->
+        <div class="letter-modal" id="letterModal">
+            <div class="letter-content">
+                <button class="close-letter" id="closeLetter">✕</button>
+                <p id="letterText"></p>
+            </div>
+        </div>
+
+        <!-- Final Message -->
+        <div class="final-message" id="finalMessage">
+            <h1>Thanks for coming in my life</h1>
+        </div>
+
+        <div class="final-surprise" id="finalSurprise">
+            <h2>Our Beautiful Memories ❤️</h2>
+            <div class="random-images"></div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
