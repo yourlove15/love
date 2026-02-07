@@ -188,6 +188,6 @@ const backgrounds = [
 - Check repository is Public
 - Verify `index.html` is in root directory
 
----
+----
 
 Made with ❤️ for Valentine's Day
